@@ -1,12 +1,20 @@
 ## C# code formatting guidelines
 ### Formatting
-Line breaking:
+By default Unity makes a new script looks like this:
 ```cs
-    public class Foo : MonoBehaviour {
-        
-        // Use this for initialization
-        void Start () {
-            //Code here
-        }
-    }
+using UnityEngine;
+using System.Collections;
+
+public class NewBehaviourScript : MonoBehaviour {
+
+	// Use this for initialization
+	void Start () {
+	
+	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+	}
+}
 ```
