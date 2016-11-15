@@ -1,1 +1,1 @@
-# Unity3D C# code formatting Guidelines
+# Unity3D C# code formatting guidelines
