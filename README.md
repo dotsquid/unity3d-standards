@@ -1,6 +1,4 @@
 # Unity3D C# Code Formatting Guidelines
 
-- C# standarts
+- [C# standarts](https://github.com/O1dSeaman/unity3d-standarts/master/Coding.md)
 - Project File Structure Standards
-
-[a link](https://github.com/O1dSeaman/unity3d-standarts/master/other_file.md)
