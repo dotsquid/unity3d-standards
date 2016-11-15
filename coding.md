@@ -18,3 +18,4 @@ public class NewBehaviourScript : MonoBehaviour {
 	}
 }
 ```
+Our formatting style is Microsoft's. Your first step in a file like this is to delete the end curly brace and retype it, so it formats the class like this:
