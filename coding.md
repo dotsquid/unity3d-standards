@@ -1,6 +1,7 @@
 ## C# code formatting guidelines
 ### Formatting
 Line breaking:
+
     public class Foo : MonoBehaviour {
         
         // Use this for initialization
