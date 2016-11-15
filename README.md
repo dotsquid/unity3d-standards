@@ -1,3 +1,4 @@
 # Unity3D C# Code Formatting Guidelines
 
-Index
+- C# standarts
+- Project File Structure Standards
