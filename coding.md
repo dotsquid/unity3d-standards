@@ -1,7 +1,7 @@
 ## C# code formatting guidelines
 ### Formatting
 Line breaking:
-
+'''c#
     public class Foo : MonoBehaviour {
         
         // Use this for initialization
@@ -9,3 +9,4 @@ Line breaking:
             //Code here
         }
     }
+'''
