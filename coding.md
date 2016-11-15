@@ -13,6 +13,16 @@ public class Foo
 }
 ```
 
+If you want to make your private field visible in Inspector and do not break encapsulation use *SerializeField* attribute:
+
+```cs
+public class Foo : MonoBehaviour
+{
+	[SerializeField]
+	privare int number;
+}
+```
+
 ### Braces
 By default Unity makes a new script look like this:
 ```cs
@@ -52,9 +62,24 @@ public class Foo
 }
 ```
 Some rules about comments:
-- insert space between slash and text;
-- put dot at the end of a comment;
-- use shortcut keys to comment or uncomment multiple lines. It is way more faster than putting multiLine comments;
-- put comments only if they are useful. Do not comment everything;
-- put comments on something that is potentially confusing;
-- think about other developers who work on the same project. Is your code good enough to understand it without comment?
+- Insert space between slash and text.
+- Put dot at the end of a comment.
+- Use shortcut keys to comment or uncomment multiple lines. It is way more faster than putting multiLine comments.
+- Write comments only if they are useful. Do not comment everything.
+- Write comments on something that is potentially confusing.
+- Think about other developers who work with you. Is your code good enough to understand it without comment?
+
+### Unused code
+Delete unused code. Delete empty methods. If it is a Unity callback method like Start or Update it will be executed even if it is empty, this can slow the game down a bit.
+
+### Animation events
+If you have a method that is callback for some animation event then name it with prefix:
+```cs
+public class Foo
+{
+	private void AnimEvent_PlayVoiceSound()
+	{
+	}
+}
+```
+It is a common situation when someone finds such kind of method without prefix in its name. He finds out that there are no references to this method and deletes it as unused code.
