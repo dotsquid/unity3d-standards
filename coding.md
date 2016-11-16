@@ -5,11 +5,11 @@ This convention remains unchanged from standard C#. ALWAYS put the private keywo
 ```cs
 public class Foo
 {
-	privare int number;
+    privare int number;
 
-	private void Bar()
-	{
-	}
+    private void Bar()
+    {
+    }
 }
 ```
 
@@ -18,8 +18,8 @@ If you want to make your private field visible in Inspector and do not break enc
 ```cs
 public class Foo : MonoBehaviour
 {
-	[SerializeField]
-	privare int number;
+    [SerializeField]
+    privare int number;
 }
 ```
 
@@ -28,19 +28,19 @@ By default Unity makes a new script look like this:
 ```cs
 public class Foo : MonoBehaviour {
 
-        // Use this for initialization
-	void Start () {
-	}
+    // Use this for initialization
+    void Start () {
+    }
 }
 ```
 Always place open braces on new lines:
 ```cs
 public class Foo : MonoBehaviour
 {
-        // Use this for initialization
-	void Start ()
-	{	
-	}
+    // Use this for initialization
+    void Start ()
+    {	
+    }
 }
 ```
 ### Comments
@@ -51,14 +51,14 @@ Use XML documentation comments everywhere except a method scope. Use single line
 ///</summary>
 public class Foo
 {
-	///<summary>
-	/// XML documentation comment.
-	///</summary>
-	public void Bar()
-	{
-	    // Single line comment.
-	    int number = 0;
-	}
+    ///<summary>
+    /// XML documentation comment.
+    ///</summary>
+    public void Bar()
+    {
+        // Single line comment.
+        int number = 0;
+    }
 }
 ```
 Some rules about comments:
@@ -77,9 +77,82 @@ If you have a method that is callback for some animation event then name it with
 ```cs
 public class Foo
 {
-	private void AnimEvent_PlayVoiceSound()
-	{
-	}
+    private void AnimEvent_PlayVoiceSound()
+    {
+    }
 }
 ```
 It is a common situation when someone finds such kind of method without prefix in its name. He finds out that there are no references to this method and deletes it as unused code.
+
+### Member ordering
+A class should not look like this:
+```cs
+public class Foo : MonoBehaviour
+{
+    public int LifeAmount;
+    public Transform Boss;
+    bool working;
+    public GameObject Ground;
+    public int EnemyAmount;
+    public Transform Sword, Helmet;
+}
+```
+Group members together by their type and access modifier.
+It should look like this:
+```cs
+public class Foo : MonoBehaviour
+{
+    public int LifeAmount;
+    public int EnemyAmount;
+    public Transform Boss;
+    public Transform Sword;
+    public Transform Helmet;
+    public GameObject Ground;
+    private bool working;
+}
+```
+Do not declare several variables in one line.
+Some rules of ordering members written below.
+By access modifier:
+- public
+- protected
+- internal
+- private
+- protected internal
+
+Use the following order when you have to write something inside one of my class:
+- Enums
+- Structs
+- Classes
+- Interfaces
+- Delegates
+- Constant Fields
+- Events
+- Fields
+- Properties
+- Indexers
+- Constructors
+- Methods
+
+Within each of these groups order by access:
+- public
+- protected
+- internal
+- private
+- protected internal
+
+Within each of the access groups, order by static, then non-static:
+- static
+- non-static
+
+Do not forget order by readonly, then non-readonly : 
+- readonly
+- non-readonly
+
+
+
+
+
+
+
+
