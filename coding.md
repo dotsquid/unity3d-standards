@@ -5,7 +5,7 @@ This convention remains unchanged from standard C#. ALWAYS put the private keywo
 ```cs
 public class Foo
 {
-    privare int number;
+    private int number;
 
     private void Bar()
     {
@@ -19,7 +19,7 @@ If you want to make your private field visible in Inspector and do not break enc
 public class Foo : MonoBehaviour
 {
     [SerializeField]
-    privare int number;
+    private int number;
 }
 ```
 
@@ -82,7 +82,7 @@ public class Foo
     }
 }
 ```
-It is a common situation when someone finds such kind of method without prefix in its name. He finds out that there are no references to this method and deletes it as unused code.
+It is a common situation when someone finds such kind of method without prefix in its name. One finds out that there are no references to this method and deletes it as unused code.
 
 ### Member ordering
 A class should not look like this:
@@ -132,13 +132,19 @@ Within each of these groups order by access:
 - private
 - protected internal
 
-Within each of the access groups, order by static, then non-static:
+Within each of the access groups, order by static, then instance:
 - static
-- non-static
+- instance
 
-Do not forget order by readonly, then non-readonly : 
+Do not forget about readonly: 
 - readonly
 - non-readonly
+
+The least significant sorting attribute is a declaration modifier:
+- virtual
+- abstract
+- override
+- new
 
 Also do not declare several variables in one line.
 
