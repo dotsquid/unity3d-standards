@@ -64,7 +64,7 @@ public class Foo
 Some rules about comments:
 - Insert space between slash and text.
 - Put dot at the end of a comment.
-- Use shortcut keys to comment or uncomment multiple lines. It is way more faster than putting multiLine comments.
+- Use shortcut keys to comment or uncomment multiple lines. It is way more faster than putting multiline or several single line comments.
 - Write comments only if they are useful. Do not comment everything.
 - Write comments on something that is potentially confusing.
 - Think about other developers who work with you. Is your code good enough to understand it without comment?
