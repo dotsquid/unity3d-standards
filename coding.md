@@ -111,15 +111,6 @@ public class Foo : MonoBehaviour
     private bool working;
 }
 ```
-Do not declare several variables in one line.
-Some rules of ordering members written below.
-By access modifier:
-- public
-- protected
-- internal
-- private
-- protected internal
-
 Use the following order when you have to write something inside one of my class:
 - Enums
 - Structs
@@ -149,6 +140,7 @@ Do not forget order by readonly, then non-readonly :
 - readonly
 - non-readonly
 
+Also do not declare several variables in one line.
 
 
 
